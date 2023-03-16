@@ -30,7 +30,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=${TZ}
       - DELUGE_LOGLEVEL=error #optional
     volumes:
       - ${USERDIR}/deluge/config:/config

@@ -15,26 +15,22 @@ services:
       - 32413:32413/udp
       - 32414:32414/udp
     environment:
-      - TZ=${TZ}
       - HOSTNAME="Docker Plex"
       - PLEX_CLAIM=claim-NvniXsVUJx7_SzV4GBsn
       - ADVERTISE_IP=http://192.168.4.249:32400
     hostname: plexserver.example.com
     volumes:
-      - ${USERDIR}/plex/database:/config
-      - ${USERDIR}/plex/transcode:/transcode
-      - ${USERDIR}/plex/media:/data
+      - ${PLEXDIR}/database:/config
+      - ${PLEXDIR}/transcode:/transcode
+      - ${PLEXDIR}/media:/data
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=${TZ}
       - DELUGE_LOGLEVEL=error #optional
     volumes:
-      - ${USERDIR}/deluge/config:/config
-      - ${USERDIR}/deluge/downloads:/downloads
+      - ${DELUGEDIR}/deluge/config:/config
+      - ${DELUGEDIR}/deluge/downloads:/downloads
     ports:
       - 8112:8112
       - 6881:6881

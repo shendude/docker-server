@@ -11,5 +11,7 @@ https://docs.docker.com/engine/install/linux-postinstall/
 
 4. start the docker containers with `docker compose up -d`
 
+5. note: had to install docker and interact with it purely via cli (gui ran into issues with hardware decode setting^)
+
 ## troubleshooting
 Some drive formats do not work with POSIX permissions. exFat being one of them. In this case, to perserve compatibility with windows, I formatted the external drive to NTFS.

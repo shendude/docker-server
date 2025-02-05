@@ -9,9 +9,11 @@ https://docs.docker.com/engine/install/linux-postinstall/
 
 3. update the paths and claim id in the `.env` file
 
-4. start the docker containers with `sudo docker compose up -d`
+4. Edit the `etc/fstab` file in accordance to the provided template. Make sure the UUIDs are set correctly to the appropriate ntfs partitions, detected by `lsblk -f`
 
-5. note: had to install docker and interact with it purely via cli (gui ran into issues with hardware decode setting^)
+5. start the docker containers with `sudo docker compose up -d`
+
+6. note: had to install docker and interact with it purely via cli (gui ran into issues with hardware decode setting^)
 
 ## troubleshooting
 Some drive formats do not work with POSIX permissions. exFat being one of them. In this case, to perserve compatibility with windows, I formatted the external drive to NTFS.

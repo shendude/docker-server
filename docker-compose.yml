@@ -84,7 +84,6 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ${SYNCDIR}/config:/config
-      - ${SYNCDIR}/saves:/saves
     ports:
       - 8384:8384
       - 22000:22000/tcp

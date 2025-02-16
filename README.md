@@ -18,6 +18,9 @@ https://docs.docker.com/engine/install/linux-postinstall/
 ## troubleshooting
 Some drive formats do not work with POSIX permissions. exFat being one of them. In this case, to perserve compatibility with windows, I formatted the external drive to NTFS.
 
+warning: modifying `etc/fstab` to automount drives will cause startup to fail or be slow if these drives are not connecterd at boot time. One will need to enter recovery shell
+and delete the additional fstab entries to bypass this issue.
+
 ## radarr, sonarr, sabnzbd config
 
 1. sabnzbd: after finishing the install wizard, set the temporary download folder (config/folders) and completed download folder values to the mounted volumnes downloads and incomplete-downloads

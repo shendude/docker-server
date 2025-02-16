@@ -14,4 +14,5 @@ UUID=8ca3d2a2-bc00-4030-9a13-1ed44f0065c9 /               ext4    errors=remount
 UUID=b16ea401-f186-4888-9865-28acc883c602 none            swap    sw              0       0
 # external drives
 UUID=1220031720030209 /mnt/plex ntfs auto,user,exec,rw,async,atime 0 0
-UUID=480C90C70C90B184 /mnt/deluge ntfs auto,user,exec,rw,async,atim 0 0
+UUID=5C7EF0657EF0397A /mnt/deluge ntfs auto,user,exec,rw,async,atim 0 0
+UUID=1EEA80F5EA80CA8B /mnt/sd ntfs auto,user,exec,rw,async,atim 0 0

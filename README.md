@@ -1,5 +1,5 @@
 # docker-server
-for setup of plex and deluge
+for setup of plex and deluge. targets debian hosts
 
 ## additional setup
 1. follow all setup instructions for docker-desktop here: https://docs.docker.com/engine/install/ubuntu/

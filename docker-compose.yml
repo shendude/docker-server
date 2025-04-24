@@ -1,21 +1,4 @@
 services:
-  plex:
-    image: lscr.io/linuxserver/plex:latest
-    container_name: plex
-    network_mode: host
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - VERSION=docker
-      - PLEX_CLAIM=${PLEX_CLAIM}
-    volumes:
-      - ${PLEXDIR}/database:/config
-      - ${PLEXDIR}/transcode:/transcode
-      - ${PLEXDIR}/media:/data
-    devices:
-       - /dev/dri:/dev/dri # For H/W transcoding
-    restart: unless-stopped
   deluge:
     image: lscr.io/linuxserver/deluge:latest
     container_name: deluge
@@ -36,9 +19,9 @@ services:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ${PLEXDIR}/config/radarr:/config
       - ${PLEXDIR}/media/movies:/movies #optional
@@ -50,9 +33,9 @@ services:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ${PLEXDIR}/config/sonarr:/config
       - ${PLEXDIR}/media/tv:/tv #optional
@@ -64,9 +47,9 @@ services:
     image: lscr.io/linuxserver/sabnzbd:latest
     container_name: sabnzbd
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ${PLEXDIR}/config/sabnzbd:/config
       - ${PLEXDIR}/downloads:/downloads #optional
@@ -79,9 +62,9 @@ services:
     container_name: syncthing
     hostname: syncthing #optional
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
       - ${SYNCDIR}/config:/config
     ports:

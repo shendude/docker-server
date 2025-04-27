@@ -8,7 +8,7 @@ services:
       - TZ=${TZ}
       - DELUGE_LOGLEVEL=error #optional
     volumes:
-      - ${DELUGEDIR}/config:/config
+      - ${CONFIGDIR}/deluge:/config
       - ${DELUGEDIR}/downloads:/downloads
     ports:
       - 8112:8112
@@ -23,7 +23,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${PLEXDIR}/config/radarr:/config
+      - ${CONFIGDIR}/radarr:/config
       - ${PLEXDIR}/media/movies:/movies #optional
       - ${PLEXDIR}/downloads:/downloads #optional
     ports:
@@ -37,7 +37,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${PLEXDIR}/config/sonarr:/config
+      - ${CONFIGDIR}/sonarr:/config
       - ${PLEXDIR}/media/tv:/tv #optional
       - ${PLEXDIR}/downloads:/downloads #optional
     ports:
@@ -51,7 +51,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${PLEXDIR}/config/sabnzbd:/config
+      - ${CONFIGDIR}/sabnzbd:/config
       - ${PLEXDIR}/downloads:/downloads #optional
       - ${PLEXDIR}/incomplete:/incomplete-downloads #optional
     ports:
@@ -66,7 +66,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${SYNCDIR}/config:/config
+      - ${CONFIGDIR}/syncthing:/config
+      - ${SYNCDIR}:/sync #optional
     ports:
       - 8384:8384
       - 22000:22000/tcp

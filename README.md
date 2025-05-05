@@ -11,6 +11,10 @@ for setup of plex and deluge. targets mac hosts
 
 1. use the fstab file to automate mounting. targets debian hosts
 
+2. used pmset to set a restart cycle at ~3am every day to maintain server performance `sudo pmset repeat shutdown MTWRFSU 02:50:00 poweron MTWRFSU 02:59:0`
+
+3. in addition to pmset schedule, allow the mac to automatically login as user to start servers on automated restart
+
 ## radarr, sonarr, sabnzbd config
 
 1. sabnzbd: after finishing the install wizard, set the temporary download folder (config/folders) and completed download folder values to the mounted volumnes downloads and incomplete-downloads

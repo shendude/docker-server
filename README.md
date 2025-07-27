@@ -11,7 +11,7 @@ for setup of plex and deluge. targets mac hosts
 
 1. use the fstab file to automate mounting. targets debian hosts
 
-2. used pmset to set a restart cycle at ~3am every day to maintain server performance `sudo pmset repeat shutdown MTWRFSU 02:50:00 poweron MTWRFSU 02:59:0`
+2. used pmset to set a restart cycle at midnight every day to maintain server performance `sudo pmset repeat restart MTWRFSU 00:00:00`
 
 3. in addition to pmset schedule, allow the mac to automatically login as user to start servers on automated restart
 

@@ -1,20 +1,4 @@
 services:
-  deluge:
-    image: lscr.io/linuxserver/deluge:latest
-    container_name: deluge
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - DELUGE_LOGLEVEL=error #optional
-    volumes:
-      - ${CONFIGDIR}/deluge:/config
-      - ${DELUGEDIR}/downloads:/downloads
-    ports:
-      - 8112:8112
-      - 6881:6881
-      - 6881:6881/udp
-    restart: unless-stopped
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
@@ -85,8 +69,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - "./config:/home/node/app/config"
-      - "./data:/home/node/app/data"
-      - "./plugins:/home/node/app/plugins"
-      - "./extensions:/home/node/app/public/scripts/extensions/third-party"
+      - "${CONFIGDIR}/sillytavern/config:/home/node/app/config"
+      - "${CONFIGDIR}/sillytavern/data:/home/node/app/data"
+      - "${CONFIGDIR}/sillytavern/plugins:/home/node/app/plugins"
+      - "${CONFIGDIR}/sillytavern/extensions:/home/node/app/public/scripts/extensions/third-party"
     restart: unless-stopped

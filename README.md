@@ -15,6 +15,8 @@ for setup of plex and deluge. targets mac hosts
 
 3. in addition to pmset schedule, allow the mac to automatically login as user to start servers on automated restart
 
+4. deluge removed in favor of bare metal torrent client install (transmission)
+
 ## radarr, sonarr, sabnzbd config
 
 1. sabnzbd: after finishing the install wizard, set the temporary download folder (config/folders) and completed download folder values to the mounted volumnes downloads and incomplete-downloads

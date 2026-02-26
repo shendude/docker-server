@@ -1,4 +1,10 @@
 services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main-slim
+    ports:
+      - "3000:8080"
+    volumes:
+      - open-webui:/app/backend/data
   radarr:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
@@ -74,3 +80,5 @@ services:
       - "${CONFIGDIR}/sillytavern/plugins:/home/node/app/plugins"
       - "${CONFIGDIR}/sillytavern/extensions:/home/node/app/public/scripts/extensions/third-party"
     restart: unless-stopped
+volumes:
+  open-webui:
